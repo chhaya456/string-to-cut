@@ -22,7 +22,7 @@ app.post("/", function(req, res) {
   var newStr = req.body.sentance;
   // console.log(newStr);
 
-  function reverseString(str) {
+  function cutString(str) {
     var updatedString = "";
      var arrName = str.split('');
   var ptrIndex = 2;
@@ -30,12 +30,13 @@ app.post("/", function(req, res) {
         updatedString += arrName[i];
         
     }
-  res.send("The result is:" + updatedString);
+  
     return updatedString;
 }
 
+var result = cutString(newStr);
 
-reverseString(newStr);
+res.send("The result is:" + result);
 });
 
 app.listen(3000, function() {
